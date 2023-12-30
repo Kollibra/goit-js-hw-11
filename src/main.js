@@ -104,3 +104,7 @@ function createMarkup(arr) {
         </li>`)
     .join('');
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Код, що виводить повідомлення за допомогою iziToast
+});
