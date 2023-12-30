@@ -28,7 +28,9 @@ function onSearch(event) {
         });
       }
 
-      listImages.innerHTML = ("beforeend", createMarkup(data.hits));
+      // listImages.innerHTML = ("beforeend", createMarkup(data.hits));
+
+      listImages.insertAdjacentHTML("beforeend", createMarkup(data.hits));
 
       const refreshPage = new SimpleLightbox('.gallery a', {
         captions: true,
@@ -50,7 +52,7 @@ function getPictures(name) {
   const KEY = '41464505-2754a712b3ad6890f1a57d527';
 
   if (name.includes(' ')) {
-    name.replace(/\s+/g, '+');
+   name = name.replace(/\s+/g, '+');
   }
 
   const searchParams = new URLSearchParams({
@@ -83,19 +85,19 @@ function createMarkup(arr) {
           </a>
           <div class="thumb-block">
             <div class="block">
-              <h2 class="tittle">Likes</h2>
+              <h2 class="title">Likes</h2>
               <p class="amount">${likes}</p>
             </div>
             <div class="block">
-              <h2 class="tittle">Views</h2>
+              <h2 class="title">Views</h2>
               <p class="amount">${views}</p>
             </div>
             <div class="block">
-              <h2 class="tittle">Comments</h2>
+              <h2 class="title">Comments</h2>
               <p class="amount">${comments}</p>
             </div>
             <div class="block">
-              <h2 class="tittle">Downloads</h2>
+              <h2 class="title">Downloads</h2>
               <p class="amount">${downloads}</p>
             </div>
           </div>
